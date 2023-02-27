@@ -2,13 +2,14 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
+
 const port = 3000;
 const logFile = fs.createWriteStream('access.log', { flags: 'a' });
 
 const server = http.createServer((req, res) => {
-  const filePath = path.join(__dirname, 'nature.jpg.jpg');
-
-  console.log(filePath);
+  const filePath = path.join(__dirname, 'nature.jpg');
+  console.log("Directory Name: ", __dirname);
+  console.log("Full Path: ", filePath);
 
   fs.access(filePath, fs.constants.R_OK, (err) => {
     if (err) {
@@ -28,9 +29,10 @@ const server = http.createServer((req, res) => {
     stream.pipe(res);
 
     logFile.write(`${new Date()} - ${req.method} ${req.url} - ${res.statusCode}\n`);
-  });
-});
 
-server.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}/`);
-});
+  });
+  server.close();
+
+}).listen(port);
+
+

@@ -3,3 +3,5 @@ Sun Feb 26 2023 16:09:39 GMT+0600 (Bangladesh Standard Time) - GET /nature.jpg.j
 Sun Feb 26 2023 16:10:20 GMT+0600 (Bangladesh Standard Time) - GET /nature.jpg.jp - 200
 Sun Feb 26 2023 16:10:26 GMT+0600 (Bangladesh Standard Time) - GET /nature - 200
 Sun Feb 26 2023 16:10:28 GMT+0600 (Bangladesh Standard Time) - GET /nature - 200
+Mon Feb 27 2023 15:28:13 GMT+0600 (Bangladesh Standard Time) - GET / - 200
+Mon Feb 27 2023 15:28:13 GMT+0600 (Bangladesh Standard Time) - GET /favicon.ico - 200

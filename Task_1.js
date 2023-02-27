@@ -2,12 +2,11 @@ const http = require('http');
 const url = require('url');
 const path = require('path');
 const fs = require('fs');
-const mime = require('mime-types');
 
 const port = 8080;
 
 const server = http.createServer(function (req, res) {
-    if (req.method === "GET") {
+    if (req.method == "GET") {
         const parsedUrl = url.parse(req.url);
         const hostName = parsedUrl.hostname || req.headers.host;
         const reqPath = parsedUrl.pathname;
@@ -24,22 +23,15 @@ const server = http.createServer(function (req, res) {
               server.close();
               return;
             }
-
+        
             const stat = fs.statSync(filePath);
-            const contentType = mime.contentType(path.extname(filePath));
-
+        
             res.writeHead(200, {
-              'Content-Type': contentType,
+              'Content-Type': 'image/jpeg',
               'Content-Length': stat.size,
             });
-
+        
             const stream = fs.createReadStream(filePath);
-            stream.on('error', (err) => {
-              console.error(err);
-              res.statusCode = 500;
-              res.end('Internal server error');
-            });
-
             stream.pipe(res);
         
             // logFile.write(`${new Date()} - ${req.method} ${req.url} - ${res.statusCode}\n`);
