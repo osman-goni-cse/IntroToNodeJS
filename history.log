@@ -50,3 +50,11 @@ File Not Found Response Sent.
 Server is running on port 8080
 02/28/2023 10:47:11 AM - GET /profile.jpg - 200
 Successfully sent response.
+Server is running on port 8080
+02/28/2023 10:58:14 AM - GET /profile.jpg - 200
+Successfully sent response.
+02/28/2023 10:58:19 AM - GET /profile.jp - 404
+File Not Found Response Sent.
+Server is running on port 8080
+02/28/2023 10:58:34 AM - GET /winter/nature.pdf - 415
+File May be damaged response sent.
